@@ -53,7 +53,9 @@ uses
 function TAvaliacao.CalculaIMC(pAltura, pPeso: Double; pIdade: integer) : Double;
 begin
    Result := 0;
-   if pAltura > 0 then
+   if pIdade < 18 then
+      raise EFaixaEtariaIndisponivel.Create('Faixa etária indisponível.')
+   else if pAltura > 0 then
       Result := SimpleRoundTo(pPeso / (pAltura * pAltura), -2);
 end;
 
