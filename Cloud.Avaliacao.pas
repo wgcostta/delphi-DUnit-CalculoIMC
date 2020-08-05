@@ -32,7 +32,7 @@ uses
     property Peso: Double read GetPeso write SetPeso;
     property Altura: Double read GetAltura write SetAltura;
     // metodos
-    function CalculaIMC(pAltura, pPeso: Double):Double;
+    function CalculaIMC(pAltura, pPeso: Double; pIdade: integer) : Double;
     function RetornaClassificacaoIMC(pIMC: Double; pIdade: integer): string;
     constructor create;
     destructor Destroy; override;
@@ -43,13 +43,16 @@ uses
 
 implementation
 
+uses
+  System.Math;
+
 { TAvaliacao }
 
-function TAvaliacao.CalculaIMC(pAltura, pPeso: Double): Double;
+function TAvaliacao.CalculaIMC(pAltura, pPeso: Double; pIdade: integer) : Double;
 begin
    Result := 0;
    if pAltura > 0 then
-      Result := pPeso / (pAltura * pAltura);
+      Result := SimpleRoundTo(pPeso / (pAltura * pAltura), -2);
 end;
 
 function TAvaliacao.RetornaClassificacaoIMC(pIMC: Double; pIdade: integer): string;

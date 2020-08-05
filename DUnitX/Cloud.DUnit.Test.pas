@@ -10,7 +10,7 @@ type
   [TestFixture]
   TestTAvaliacao = class(TObject)
   strict private
-      FAvaliacao: TAvaliacao;
+//      FAvaliacao: TAvaliacao;
   public
     [Setup]
     procedure Setup;
@@ -26,7 +26,7 @@ type
     [TestCase('TestB','3,4')]
     procedure Test2(const AValue1 : Integer;const AValue2 : Integer);
 
-   [TestCase('Test01','19,17,Não disponível')]
+   [TestCase('Test01','19,17,Não calculado')]
    [TestCase('Test02','18,18,Abaixo do Peso')]
    [TestCase('Test03','22,22,Peso Normal')]
    [TestCase('Test04','25,35,Sobrepeso')]
@@ -37,6 +37,8 @@ type
    [TestCase('Test09','22,60,Peso Normal')]
    [TestCase('Test10','27,60,Acima do Peso')]
    procedure TestRetornaClassificacaoIMC2(pIMC: Currency; pIdade: Integer; _Result: string);
+   [Test]
+   procedure TestCalculaIMC;
   end;
 
 implementation
@@ -64,6 +66,13 @@ procedure TestTAvaliacao.TestRetornaClassificacaoIMC2(pIMC: Currency;
 begin
    R := TAvaliacao.New.RetornaClassificacaoIMC(pIMC,pIdade);
    Assert.AreEqual(_Result, R);
+end;
+
+procedure TestTAvaliacao.TestCalculaIMC;
+var R: Extended;
+begin
+  R := TAvaliacao.New.CalculaIMC(1.77,80,29);
+  Assert.AreEqual(25.54, R);
 end;
 
 initialization
