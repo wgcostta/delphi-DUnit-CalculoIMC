@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<test-results name="C:\Repositorios\delphi-DUnit-CalculoIMC\Win32\Debug\ProjetoComDUnitX.exe" total="14" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2020-08-05" time="0.003">
+<test-results name="C:\Repositorios\delphi-DUnit-CalculoIMC\Win32\Debug\ProjetoComDUnitX.exe" total="15" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2020-08-05" time="0.019">
   <culture-info current-culture="en" current-uiculture="en" />
-  <test-suite type="Assembly" name="ProjetoComDUnitX.exe" executed="true" result="Success" success="True" time="0.003" asserts="0">
+  <test-suite type="Assembly" name="ProjetoComDUnitX.exe" executed="true" result="Success" success="True" time="0.019" asserts="0">
     <results>
-        <test-suite type="Namespace" name="Cloud" executed="true" result="Success" success="True" time="0.002" asserts="0" >
+        <test-suite type="Namespace" name="Cloud" executed="true" result="Success" success="True" time="0.018" asserts="0" >
           <results>
-              <test-suite type="Fixture" name="TestTAvaliacao" executed="True" result="Success" success="True" time="0.002" >
+              <test-suite type="Fixture" name="TestTAvaliacao" executed="True" result="Success" success="True" time="0.018" >
                 <results>
                   <test-case name="Test1" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="Test2.TestA" executed="True" result="Success" success="True" time="0.000" asserts="0" />
@@ -21,6 +21,7 @@
                   <test-case name="TestRetornaClassificacaoIMC2.Test09" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestRetornaClassificacaoIMC2.Test10" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestCalculaIMC" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestIMCIdadeMenor18" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                 </results>
               </test-suite>
           </results>
