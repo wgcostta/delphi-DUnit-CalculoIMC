@@ -5,7 +5,7 @@ type
   ICloudAvaliacao = interface
     ['{0C9584CF-ED3B-44BE-8591-B6880746AC30}']
     function CalculaIMC(pAltura, pPeso: Double):Double;
-    function ClassificacaoIMC(pIMC: Double; pIdade: integer): string;
+    function RetornaClassificacaoIMC(pIMC: Double; pIdade: integer): string;
   end;
 
 implementation

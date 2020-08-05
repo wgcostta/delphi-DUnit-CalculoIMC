@@ -33,7 +33,7 @@ uses
     property Altura: Double read GetAltura write SetAltura;
     // metodos
     function CalculaIMC(pAltura, pPeso: Double):Double;
-    function ClassificacaoIMC(pIMC: Double; pIdade: integer): string;
+    function RetornaClassificacaoIMC(pIMC: Double; pIdade: integer): string;
     constructor create;
     destructor Destroy; override;
     class function New : ICloudAvaliacao;
@@ -52,7 +52,7 @@ begin
       Result := pPeso / (pAltura * pAltura);
 end;
 
-function TAvaliacao.ClassificacaoIMC(pIMC: Double; pIdade: integer): string;
+function TAvaliacao.RetornaClassificacaoIMC(pIMC: Double; pIdade: integer): string;
 begin
      if (pIdade < 18) then
        Result := 'Não calculado'

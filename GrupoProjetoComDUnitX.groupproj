@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{051D9B77-38E4-4F9A-86E3-1EAF7DC2DBB1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CalculoMC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ProjetoComDUnitX.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CalculoMC">
+        <MSBuild Projects="CalculoMC.dproj"/>
+    </Target>
+    <Target Name="CalculoMC:Clean">
+        <MSBuild Projects="CalculoMC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalculoMC:Make">
+        <MSBuild Projects="CalculoMC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjetoComDUnitX">
+        <MSBuild Projects="ProjetoComDUnitX.dproj"/>
+    </Target>
+    <Target Name="ProjetoComDUnitX:Clean">
+        <MSBuild Projects="ProjetoComDUnitX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoComDUnitX:Make">
+        <MSBuild Projects="ProjetoComDUnitX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CalculoMC;ProjetoComDUnitX"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CalculoMC:Clean;ProjetoComDUnitX:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CalculoMC:Make;ProjetoComDUnitX:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

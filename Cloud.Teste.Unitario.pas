@@ -58,7 +58,7 @@ begin
    lblResultado.Caption := 'Resultado: ' +
    TAvaliacao
         .New
-        .ClassificacaoIMC(dValorMC,StrToInt(edtIdade.Text));
+        .RetornaClassificacaoIMC(dValorMC,StrToInt(edtIdade.Text));
 end;
 
 procedure TForm1.edtAlturaKeyDown(Sender: TObject; var Key: Word;
