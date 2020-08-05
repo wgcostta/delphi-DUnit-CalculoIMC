@@ -39,6 +39,8 @@ type
    procedure TestRetornaClassificacaoIMC2(pIMC: Currency; pIdade: Integer; _Result: string);
    [Test]
    procedure TestCalculaIMC;
+   [Test]
+   procedure TestIMCIdadeMenor18;
   end;
 
 implementation
@@ -74,6 +76,15 @@ begin
   R := TAvaliacao.New.CalculaIMC(1.77,80,29);
   Assert.AreEqual(25.54, R);
 end;
+
+ procedure TestTAvaliacao.TestIMCIdadeMenor18;
+  begin
+    Assert.WillRaise(procedure
+                     begin
+                       TAvaliacao.New.CalculaIMC(1.77,80,17)
+                     end, EFaixaEtariaIndisponivel);
+  end;
+
 
 initialization
   TDUnitX.RegisterTestFixture(TestTAvaliacao);

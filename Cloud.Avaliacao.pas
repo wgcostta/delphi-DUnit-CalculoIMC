@@ -3,9 +3,11 @@ unit Cloud.Avaliacao;
 interface
 
 uses
-  Cloud.Avaliacao.Interfaces;
+  Cloud.Avaliacao.Interfaces,
+  SysUtils;
 
   type
+    EFaixaEtariaIndisponivel = class(Exception);
     TAvaliacao = class(TInterfacedObject,ICloudAvaliacao)
      private
       { private declarations }
